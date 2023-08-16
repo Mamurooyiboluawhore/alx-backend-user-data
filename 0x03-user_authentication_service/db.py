@@ -38,4 +38,5 @@ class DB:
         self._session.commit()
         return user
 
-    def find_user_by(self, users, **kwarg)
+    def find_user_by(self, users, **kwargs):
+        pass
