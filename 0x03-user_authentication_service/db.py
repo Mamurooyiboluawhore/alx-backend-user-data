@@ -40,7 +40,7 @@ class DB:
         self._session.commit()
         return user
 
-    def find_user_by(self, users: str, **kwargs) -> User:
+    def find_user_by(self, **kwargs) -> User:
         """ find user function """
         users = self._session.query(User)
         for key, value in kwargs.items():
@@ -49,4 +49,4 @@ class DB:
             for user in users:
                 if getattr(user, key) == value:
                     return user
-            raise NoResultFound
+                raise NoResultFound
