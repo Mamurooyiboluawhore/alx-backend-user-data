@@ -50,3 +50,16 @@ class DB:
                 if getattr(user, key) == value:
                     return user
                 raise NoResultFound
+
+    def update_user(self, user_id: int, **kwargs) -> None:
+        ''' update user '''
+        try:
+            user_id = id
+            users = self._session.query(user_id)
+        except Exception:
+            raise ValueError
+        for key, value in kwargs.items():
+            if hasattr(users, key):
+                setattr(users, key, value)
+            else:
+                raise ValueError
