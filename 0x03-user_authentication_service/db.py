@@ -54,8 +54,8 @@ class DB:
     def update_user(self, user_id: int, **kwargs) -> None:
         ''' update user '''
         try:
-            user_id = id
-            users = self._session.query(user_id)
+            id = user_id
+            users = self.find_user_by(id=user_id)
         except Exception:
             raise ValueError
         for key, value in kwargs.items():
