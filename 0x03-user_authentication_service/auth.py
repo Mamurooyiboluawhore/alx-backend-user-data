@@ -5,6 +5,7 @@ from db import DB
 from user import User
 from sqlalchemy.orm.exc import NoResultFound
 from sqlalchemy.exc import InvalidRequestError
+from uuid import uuid4
 
 
 def _hash_password(password: str) -> bytes:
@@ -43,3 +44,7 @@ class Auth:
         except (NoResultFound, InvalidRequestError):
             return False
         return False
+
+    def _generate_uuid(self) -> str:
+        unique_id = uuid4()
+        return str(unique_id)
