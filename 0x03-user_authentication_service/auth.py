@@ -46,5 +46,6 @@ class Auth:
         return False
 
     def _generate_uuid(self) -> str:
+        ''' generates uuid and returns a string representation'''
         unique_id = uuid4()
         return str(unique_id)
