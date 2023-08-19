@@ -17,9 +17,9 @@ def _hash_password(password: str) -> bytes:
     return hashed_password
 
 
-def _generate_uuid() -> str:
-    ''' generates uuid and returns a string representation'''
-    return str(uuid4())
+#def _generate_uuid() -> str:
+ #   ''' generates uuid and returns a string representation'''
+ #   return str(uuid4())
 
 
 class Auth:
@@ -49,3 +49,7 @@ class Auth:
         except (NoResultFound, InvalidRequestError):
             return False
         return False
+
+    def _generate_uuid() -> str:
+        ''' generates uuid and returns a string representation'''
+        return str(uuid4())
